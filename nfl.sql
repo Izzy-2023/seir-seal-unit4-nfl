@@ -215,15 +215,130 @@ WHERE salary > 10000000;
 20	Sam Bradford	QB	12000000
 21	Chris Long	DE	10310000
 
-
 -- 9. The player with the highest salary in the NFL
+SELECT name, position, salary
+FROM players
+ORDER BY salary DESC
+LIMIT 1;
 
+#	name	position	salary
+1	Peyton Manning	QB	18000000
 
 -- 10. The name and position of the first 100 players with the lowest salaries
+SELECT name, position
+FROM players
+ORDER BY salary
+LIMIT 100;
 
+#	name	position
+1	Phillip Dillard	
+2	Eric Kettani	RB
+3	Austin Sylvester	RB
+4	Greg Orton	WR
+5	Jerrod Johnson	QB
+6	McLeod Bethel-Thompson	QB
+7	Jonathan Crompton	QB
+8	Travon Bellamy	CB
+9	Caleb King	RB
+10	Mike Mohamed	LB
+11	Kyle Nelson	LS
+12	John Malecki	G
+13	Nathan Bussey	LB
+14	Robert James	LB
+15	Markell Carter	DE
+16	Aaron Lavarias	DT
+17	Mark Dell	WR
+18	Ronald Johnson	WR
+19	Doug Worthington	DT
+20	Derrick Jones	WR
+21	Sealver Siliga	DT
+22	Chase Beeler	C
+23	Kenny Wiggins	T
+24	Konrad Reuland	TE
+25	Michael Wilhoite	LB
+26	Garrett Chisolm	G
+27	Juamorris Stewart	WR
+28	Chad Spann	RB
+29	Trevis Turner	T
+30	Justin Medlock	KR
+31	Armon Binns	WR
+32	Derek Hall	T
+33	Shaky Smithson	WR
+34	Armando Allen	RB
+35	DAndre Goodwin	WR
+36	Jeremy Beal	DE
+37	Brett Brackett	TE
+38	Shaun Draughn	RB
+39	John Clay	RB
+40	Tristan Davis	RB
+41	Curtis Holcomb	CB
+42	Jimmy Young	WR
+43	Kevin Cone	WR
+44	Cory Nelms	CB
+45	Ben Guidugli	TE
+46	David Gilreath	WR
+47	Dontavia Bogan	WR
+48	Joe Hastings	WR
+49	Marshall McFadden	LB
+50	Kade Weston	DT
+51	Kyle Hix	T
+52	Mark LeGree	S
+53	Mike Hartline	QB
+54	Jameson Konz	WR
+55	Tyler Beiler	
+56	Mike Blanc	DT
+57	Corbin Bryant	DT
+58	Michael Jasper	DT
+59	Mike Rivera	LB
+60	Pat Devlin	QB
+61	Jerome Messam	RB
+62	Jamie McCoy	TE
+63	Lestar Jean	WR
+64	Malcolm Williams	CB
+65	Ricky Sapp	DE
+66	Rashad Carmichael	CB
+67	Alex Silvestro	DT
+68	Adam Weber	QB
+69	Adam Grant	T
+70	Jammie Kirlew	DE
+71	Joe Reitz	T
+72	Brandon Browner	CB
+73	Jeff Byers	C
+74	Jed Collins	TE
+75	Aaron Berry	CB
+76	Logan Payne	WR
+77	Marcus Sherels	CB
+78	T.J. Conley	PR
+79	Cameron Sheffield	LB
+80	Kyle Bosworth	LB
+81	Garrett McIntyre	DT
+82	John Estes	C
+83	Thomas Austin	G
+84	Emmanuel Stephens	DT
+85	Markus White	DE
+86	Ricardo Matthews	DT
+87	Quinten Lawrence	WR
+88	Bilal Powell	RB
+89	Taylor Boggs	C
+90	Kamar Aiken	WR
+91	Dexter Jackson	WR
+92	Justin Rogers	CB
+93	Johnny White	RB
+94	Eron Riley	WR
+95	Tracy Wilson	CB
+96	DaNorris Searcy	S
+97	Chris White	LB
+98	Sterling Moore	CB
+99	Chris Hairston	T
+100	Andrew Hawkins	WR
 
 -- 11. The average salary for a DE in the nfl
+SELECT Round(AVG(salary), 2) AS average_salary
+FROM players
+WHERE position = 'DE';
 
+#	average_salary
+1	2161326.38
 
 -- 12. The names of all the players on the Buffalo Bills
 
