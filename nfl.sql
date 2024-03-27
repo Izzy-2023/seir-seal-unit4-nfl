@@ -341,9 +341,88 @@ WHERE position = 'DE';
 1	2161326.38
 
 -- 12. The names of all the players on the Buffalo Bills
+SELECT players.name, teams.name
+FROM players, teams
+WHERE players.team_id=teams.id AND teams.name LIKE 'Buffalo Bills';
 
+#	name	name
+1	Mario Williams	Buffalo Bills
+2	Drayton Florence	Buffalo Bills
+3	Shawne Merriman	Buffalo Bills
+4	Dwan Edwards	Buffalo Bills
+5	Chris Kelsay	Buffalo Bills
+6	Kyle Williams	Buffalo Bills
+7	Nick Barnett	Buffalo Bills
+8	Spencer Johnson	Buffalo Bills
+9	Ryan Fitzpatrick	Buffalo Bills
+10	Steve Johnson	Buffalo Bills
+11	Tyler Thigpen	Buffalo Bills
+12	Lee Evans (Buyout)	Buffalo Bills
+13	Brad Smith	Buffalo Bills
+14	Fred Jackson	Buffalo Bills
+15	Scott Chandler	Buffalo Bills
+16	George Wilson	Buffalo Bills
+17	Erik Pears	Buffalo Bills
+18	Leodis McKelvin	Buffalo Bills
+19	Brian Moorman	Buffalo Bills
+20	Terrence McGee	Buffalo Bills
+21	Marcell Dareus	Buffalo Bills
+22	Chad Rinehart	Buffalo Bills
+23	Kraig Urbik	Buffalo Bills
+24	Rian Lindell	Buffalo Bills
+25	Kirk Morrison	Buffalo Bills
+26	Corey McIntyre	Buffalo Bills
+27	C.J. Spiller	Buffalo Bills
+28	Garrison Sanborn	Buffalo Bills
+29	Eric Wood	Buffalo Bills
+30	Lionel Dotson	Buffalo Bills
+31	Ruvell Martin	Buffalo Bills
+32	Andy Levitre	Buffalo Bills
+33	Jairus Byrd	Buffalo Bills
+34	Jarron Gilbert	Buffalo Bills
+35	Kyle Moore	Buffalo Bills
+36	Aaron Williams	Buffalo Bills
+37	Donald Jones	Buffalo Bills
+38	Fendi Onobun	Buffalo Bills
+39	Kellen Heard	Buffalo Bills
+40	Mike Caussin	Buffalo Bills
+41	Naaman Roosevelt	Buffalo Bills
+42	Alex Carrington	Buffalo Bills
+43	Arthur Moats	Buffalo Bills
+44	Colin Brown	Buffalo Bills
+45	Cordaro Howard	Buffalo Bills
+46	Dan Batten	Buffalo Bills
+47	David Nelson	Buffalo Bills
+48	Marcus Easley	Buffalo Bills
+49	Sam Young	Buffalo Bills
+50	Torell Troup	Buffalo Bills
+51	Kelvin Sheppard	Buffalo Bills
+52	Lee Smith	Buffalo Bills
+53	Chris Hairston	Buffalo Bills
+54	Chris White	Buffalo Bills
+55	DaNorris Searcy	Buffalo Bills
+56	Johnny White	Buffalo Bills
+57	Justin Rogers	Buffalo Bills
+58	Kamar Aiken	Buffalo Bills
+59	Michael Jasper	Buffalo Bills
 
 -- 13. The total salary of all players on the New York Giants
+SELECT teams.name AS team_name, SUM(players.salary) AS total_salary
+FROM players
+JOIN teams ON players.team_id = teams.id
+WHERE teams.name = 'New York Giants'
+GROUP BY teams.name;
 
+#	team_name	total_salary
+1	New York Giants	74179466
 
 -- 14. The player with the lowest salary on the Green Bay Packers
+SELECT teams.name AS team_name, players.name, players.position, players.salary
+FROM players
+JOIN teams ON players.team_id = teams.id
+WHERE teams.name = 'Green Bay Packers'
+ORDER BY players.salary
+LIMIT 1;
+
+#	team_name	name	position	salary
+1	Green Bay Packers	Shaky Smithson	WR	390000
